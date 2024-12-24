@@ -11,22 +11,20 @@ const Navbar = () => {
   const handleLogout = () => {
     setIsLoggedIn(false);
     localStorage.removeItem('userToken'); // Remove token or reset login state
-    navigate('/login'); // Redirect to the login page using useNavigate
+    navigate('/'); // Redirect to the login page using useNavigate
   };
 
   return (
     <nav className="bg-[#36454F] text-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
         {/* Brand Name */}
-        <Link to="/" className="text-2xl font-bold">
+        <Link  className="text-2xl font-bold">
           Blogs
         </Link>
 
         {/* Navbar for large screens */}
         <div className="hidden md:flex space-x-6">
-          <Link to="/" className="hover:text-accent">
-            Home
-          </Link>
+          
           
           {isLoggedIn && (  // Only show Dashboard for logged-in users
             <Link to="/admin" className="hover:text-accent">
@@ -42,7 +40,7 @@ const Navbar = () => {
               Logout
             </button>
           ) : (
-            <Link to="/login" className="hover:text-accent">
+            <Link to="/" className="hover:text-accent">
               Login
             </Link>
           )}
