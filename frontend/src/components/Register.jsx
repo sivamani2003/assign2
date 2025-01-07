@@ -33,7 +33,7 @@ const Register = () => {
       localStorage.setItem("user", JSON.stringify(response.data));
       
       alert("Registration Successful");
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       alert(err.response?.data?.error || "Registration Failed");
     }
